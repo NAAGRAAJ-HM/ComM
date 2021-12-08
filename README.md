@@ -1,0 +1,2 @@
+# ComM
+Communication manager submodule
