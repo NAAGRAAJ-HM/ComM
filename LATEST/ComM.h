@@ -1,5 +1,7 @@
 #pragma once
 
+#include "Std_Types.h"
+
 class class_ComM{
    public:
       void InitFunction              (void);
