@@ -1,44 +1,48 @@
 #pragma once
 /*****************************************************/
-/* File   : ComM.h                                   */
+/* File   : ComM_EcuM.h                              */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "Std_Types.h"
 #include "Compiler_Cfg_ComM.h"
+
+#include "EcuM_Client.h"
+
+/*****************************************************/
+/* #DEFINES                                          */
+/*****************************************************/
+
+/*****************************************************/
+/* MACROS                                            */
+/*****************************************************/
 
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class class_ComM{
+class class_ComM_EcuM : public class_EcuM_Client{
    public:
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-      FUNC(void, COMM_CODE) GetState                  (void);
-      FUNC(void, COMM_CODE) GetStatus                 (void);
-      FUNC(void, COMM_CODE) GetInhibitionStatus       (void);
-      FUNC(void, COMM_CODE) RequestComMode            (void);
-      FUNC(void, COMM_CODE) GetMaxComMode             (void);
-      FUNC(void, COMM_CODE) GetRequestedComMode       (void);
-      FUNC(void, COMM_CODE) GetCurrentComMode         (void);
-      FUNC(void, COMM_CODE) PreventWakeUp             (void);
-      FUNC(void, COMM_CODE) LimitChannelToNoComMode   (void);
-      FUNC(void, COMM_CODE) LimitECUToNoComMode       (void);
-      FUNC(void, COMM_CODE) ReadInhibitCounter        (void);
-      FUNC(void, COMM_CODE) ResetInhibitCounter       (void);
-      FUNC(void, COMM_CODE) SetECUGroupClassification (void);
-      FUNC(void, COMM_CODE) GetVersionInfo            (void);
-      FUNC(void, COMM_CODE) MainFunction              (void);
+      FUNC(void, COMM_CODE) InitFunction   (void);
+      FUNC(void, COMM_CODE) DeInitFunction (void);
 };
+
+/*****************************************************/
+/* CONSTS                                            */
+/*****************************************************/
+
+/*****************************************************/
+/* PARAMS                                            */
+/*****************************************************/
 
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern class_ComM ComM;
+extern class_EcuM_Client *EcuM_Client_ptr_ComM;
 
 /*****************************************************/
 /* EOF                                               */

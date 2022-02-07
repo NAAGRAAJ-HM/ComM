@@ -8,18 +8,22 @@
 /*****************************************************/
 #include "ComM.h"
 
+#include "ComM_EcuM.h"
+
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
+class_ComM_EcuM ComM_EcuM;
+class_EcuM_Client *EcuM_Client_ptr_ComM = &ComM_EcuM;
 class_ComM ComM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, COMM_CODE) class_ComM::InitFunction(void){
+FUNC(void, COMM_CODE) class_ComM_EcuM::InitFunction(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM::DeInitFunction(void){
+FUNC(void, COMM_CODE) class_ComM_EcuM::DeInitFunction(void){
 }
 
 FUNC(void, COMM_CODE) class_ComM::GetState(void){
