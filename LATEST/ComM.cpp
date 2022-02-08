@@ -9,12 +9,15 @@
 #include "ComM.h"
 
 #include "ComM_EcuM.h"
+#include "ComM_SchM.h"
 
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
 class_ComM_EcuM ComM_EcuM;
 class_EcuM_Client *EcuM_Client_ptr_ComM = &ComM_EcuM;
+class_ComM_SchM ComM_SchM;
+class_SchM_Client *SchM_Client_ptr_ComM = &ComM_SchM;
 class_ComM ComM;
 
 /*****************************************************/
@@ -24,6 +27,9 @@ FUNC(void, COMM_CODE) class_ComM_EcuM::InitFunction(void){
 }
 
 FUNC(void, COMM_CODE) class_ComM_EcuM::DeInitFunction(void){
+}
+
+FUNC(void, COMM_CODE) class_ComM_SchM::MainFunction(void){
 }
 
 FUNC(void, COMM_CODE) class_ComM::GetState(void){
@@ -66,9 +72,6 @@ FUNC(void, COMM_CODE) class_ComM::SetECUGroupClassification(void){
 }
 
 FUNC(void, COMM_CODE) class_ComM::GetVersionInfo(void){
-}
-
-FUNC(void, COMM_CODE) class_ComM::MainFunction(void){
 }
 
 /*****************************************************/
