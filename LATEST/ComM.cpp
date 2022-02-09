@@ -14,22 +14,25 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-class_ComM_EcuM ComM_EcuM;
-class_EcuM_Client *EcuM_Client_ptr_ComM = &ComM_EcuM;
-class_ComM_SchM ComM_SchM;
-class_SchM_Client *SchM_Client_ptr_ComM = &ComM_SchM;
+interface_ComM_EcuM_Init ComM_EcuM_Init;
+interface_ComM_EcuM_DeInit ComM_EcuM_DeInit;
+interface_ComM_SchM_Main ComM_SchM_Main;
 class_ComM ComM;
+
+interface_EcuM_Init_Client *EcuM_Init_Client_ptr_ComM = &ComM_EcuM_Init;
+interface_EcuM_DeInit_Client *EcuM_DeInit_Client_ptr_ComM = &ComM_EcuM_DeInit;
+interface_SchM_Main_Client *SchM_Main_Client_ptr_ComM = &ComM_SchM_Main;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, COMM_CODE) class_ComM_EcuM::InitFunction(void){
+FUNC(void, COMM_CODE) interface_ComM_EcuM_Init::InitFunction(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_EcuM::DeInitFunction(void){
+FUNC(void, COMM_CODE) interface_ComM_EcuM_DeInit::DeInitFunction(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_SchM::MainFunction(void){
+FUNC(void, COMM_CODE) interface_ComM_SchM_Main::MainFunction(void){
 }
 
 FUNC(void, COMM_CODE) class_ComM::GetState(void){
