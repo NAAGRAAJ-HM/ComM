@@ -6,75 +6,88 @@
 /*****************************************************/
 /* #INCLUDES                                         */
 /*****************************************************/
-#include "ComM.h"
+#include "module.h"
 
-#include "ComM_EcuM.h"
-#include "ComM_SchM.h"
+#include "ComM_Unused.h"
+
+/*****************************************************/
+/* #DEFINES                                          */
+/*****************************************************/
+
+/*****************************************************/
+/* MACROS                                            */
+/*****************************************************/
+
+/*****************************************************/
+/* TYPEDEFS                                          */
+/*****************************************************/
+class module_ComM : public class_module{
+   public:
+      FUNC(void, COMM_CODE) InitFunction   (void);
+      FUNC(void, COMM_CODE) DeInitFunction (void);
+      FUNC(void, COMM_CODE) MainFunction   (void);
+};
 
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-interface_ComM_EcuM_Init ComM_EcuM_Init;
-interface_ComM_EcuM_DeInit ComM_EcuM_DeInit;
-interface_ComM_SchM_Main ComM_SchM_Main;
-class_ComM ComM;
+module_ComM ComM;
 
-interface_EcuM_Init_Client *EcuM_Init_Client_ptr_ComM = &ComM_EcuM_Init;
-interface_EcuM_DeInit_Client *EcuM_DeInit_Client_ptr_ComM = &ComM_EcuM_DeInit;
-interface_SchM_Main_Client *SchM_Main_Client_ptr_ComM = &ComM_SchM_Main;
+interface_EcuM_Client *EcuM_Client_ptr_ComM = &ComM;
+interface_SchM_Client *SchM_Client_ptr_ComM = &ComM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
 /*****************************************************/
-FUNC(void, COMM_CODE) interface_ComM_EcuM_Init::InitFunction(void){
+FUNC(void, COMM_CODE) module_ComM::InitFunction(void){
 }
 
-FUNC(void, COMM_CODE) interface_ComM_EcuM_DeInit::DeInitFunction(void){
+FUNC(void, COMM_CODE) module_ComM::DeInitFunction(void){
 }
 
-FUNC(void, COMM_CODE) interface_ComM_SchM_Main::MainFunction(void){
+FUNC(void, COMM_CODE) module_ComM::MainFunction(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM::GetState(void){
+FUNC(void, COMM_CODE) class_ComM_Unused::GetState(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM::GetStatus(void){
+FUNC(void, COMM_CODE) class_ComM_Unused::GetStatus(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM::GetInhibitionStatus(void){
+FUNC(void, COMM_CODE) class_ComM_Unused::GetInhibitionStatus(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM::RequestComMode(void){
+FUNC(void, COMM_CODE) class_ComM_Unused::RequestComMode(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM::GetMaxComMode(void){
+FUNC(void, COMM_CODE) class_ComM_Unused::GetMaxComMode(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM::GetRequestedComMode(void){
+FUNC(void, COMM_CODE) class_ComM_Unused::GetRequestedComMode(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM::GetCurrentComMode(void){
+FUNC(void, COMM_CODE) class_ComM_Unused::GetCurrentComMode(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM::PreventWakeUp(void){
+FUNC(void, COMM_CODE) class_ComM_Unused::PreventWakeUp(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM::LimitChannelToNoComMode(void){
+FUNC(void, COMM_CODE) class_ComM_Unused::LimitChannelToNoComMode(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM::LimitECUToNoComMode(void){
+FUNC(void, COMM_CODE) class_ComM_Unused::LimitECUToNoComMode(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM::ReadInhibitCounter(void){
+FUNC(void, COMM_CODE) class_ComM_Unused::ReadInhibitCounter(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM::ResetInhibitCounter(void){
+FUNC(void, COMM_CODE) class_ComM_Unused::ResetInhibitCounter(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM::SetECUGroupClassification(void){
+FUNC(void, COMM_CODE) class_ComM_Unused::SetECUGroupClassification(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM::GetVersionInfo(void){
+FUNC(void, COMM_CODE) class_ComM_Unused::GetVersionInfo(void){
 }
 
 /*****************************************************/
