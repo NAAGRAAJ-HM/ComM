@@ -7,7 +7,8 @@
 /* #INCLUDES                                         */
 /*****************************************************/
 #include "module.h"
-
+#include "ComM_EcuM.h"
+#include "ComM_SchM.h"
 #include "ComM_Unused.h"
 
 /*****************************************************/
@@ -21,7 +22,11 @@
 /*****************************************************/
 /* TYPEDEFS                                          */
 /*****************************************************/
-class module_ComM : public class_module{
+class module_ComM:
+      public abstract_module
+   ,  public interface_ComM_EcuM
+   ,  public interface_ComM_SchM
+{
    public:
       FUNC(void, COMM_CODE) InitFunction   (void);
       FUNC(void, COMM_CODE) DeInitFunction (void);
@@ -33,8 +38,8 @@ class module_ComM : public class_module{
 /*****************************************************/
 module_ComM ComM;
 
-interface_EcuM_Client *EcuM_Client_ptr_ComM = &ComM;
-interface_SchM_Client *SchM_Client_ptr_ComM = &ComM;
+interface_ComM_EcuM *EcuM_Client_ptr_ComM = &ComM;
+interface_ComM_SchM *SchM_Client_ptr_ComM = &ComM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
