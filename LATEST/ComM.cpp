@@ -24,8 +24,6 @@
 /*****************************************************/
 class module_ComM:
       public abstract_module
-   ,  public interface_ComM_EcuM
-   ,  public interface_ComM_SchM
 {
    public:
       FUNC(void, COMM_CODE) InitFunction   (void);
@@ -34,12 +32,19 @@ class module_ComM:
 };
 
 /*****************************************************/
+/* CONSTS                                            */
+/*****************************************************/
+
+/*****************************************************/
+/* PARAMS                                            */
+/*****************************************************/
+
+/*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-module_ComM ComM;
-
-interface_ComM_EcuM *EcuM_Client_ptr_ComM = &ComM;
-interface_ComM_SchM *SchM_Client_ptr_ComM = &ComM;
+module_ComM    ComM;
+infEcuMClient* gptrinfEcuMClient_ComM = &ComM;
+infSchMClient* gptrinfSchMClient_ComM = &ComM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
