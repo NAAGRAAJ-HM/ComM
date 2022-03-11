@@ -8,8 +8,8 @@
 /*****************************************************/
 #include "module.h"
 #include "infComM_EcuM.h"
+#include "infComM_Dcm.h"
 #include "infComM_SchM.h"
-#include "ComM_Unused.h"
 
 /*****************************************************/
 /* #DEFINES                                          */
@@ -63,6 +63,8 @@ FUNC(void, COMM_CODE) module_ComM::GetVersionInfo(void){
 FUNC(void, COMM_CODE) module_ComM::MainFunction(void){
 }
 
+#include "ComM_Unused.h"
+
 FUNC(void, COMM_CODE) class_ComM_Unused::GetState(void){
 }
 
@@ -100,9 +102,6 @@ FUNC(void, COMM_CODE) class_ComM_Unused::ResetInhibitCounter(void){
 }
 
 FUNC(void, COMM_CODE) class_ComM_Unused::SetECUGroupClassification(void){
-}
-
-FUNC(void, COMM_CODE) class_ComM_Unused::GetVersionInfo(void){
 }
 
 /*****************************************************/

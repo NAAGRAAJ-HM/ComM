@@ -1,6 +1,6 @@
 #pragma once
 /*****************************************************/
-/* File   : ComM_SchM.h                              */
+/* File   : infComM_EcuM.h                           */
 /* Author : Naagraaj HM                              */
 /*****************************************************/
 
@@ -32,7 +32,7 @@
 /*****************************************************/
 /* OBJECTS                                           */
 /*****************************************************/
-extern infSchMClient* gptrinfSchMClient_ComM;
+extern infEcuMClient* gptrinfEcuMClient_ComM;
 
 /*****************************************************/
 /* FUNCTIONS                                         */
