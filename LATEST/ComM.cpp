@@ -6,9 +6,8 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "infComM_Version.h"
-
 #include "module.h"
+#include "infComM_Version.h"
 #include "infComM_EcuM.h"
 #include "infComM_Dcm.h"
 #include "infComM_SchM.h"
@@ -45,31 +44,20 @@ class module_ComM:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-
-/******************************************************************************/
-/* FUNCTIONS                                                                  */
-/******************************************************************************/
-
-/******************************************************************************/
-/* EOF                                                                        */
-/******************************************************************************/
-
-
-/*****************************************************/
-/* OBJECTS                                           */
-/*****************************************************/
 VAR(module_ComM, COMM_VAR) ComM;
 CONSTP2VAR(infEcuMClient, COMM_VAR, COMM_CONST) gptrinfEcuMClient_ComM = &ComM;
 CONSTP2VAR(infDcmClient,  COMM_VAR, COMM_CONST) gptrinfDcmClient_ComM  = &ComM;
 CONSTP2VAR(infSchMClient, COMM_VAR, COMM_CONST) gptrinfSchMClient_ComM = &ComM;
 
-/*****************************************************/
-/* FUNCTIONS                                         */
-/*****************************************************/
+/******************************************************************************/
+/* FUNCTIONS                                                                  */
+/******************************************************************************/
 FUNC(void, COMM_CODE) module_ComM::InitFunction(void){
+   ComM.IsInitDone = E_OK;
 }
 
 FUNC(void, COMM_CODE) module_ComM::DeInitFunction(void){
+   ComM.IsInitDone = E_NOT_OK;
 }
 
 FUNC(void, COMM_CODE) module_ComM::GetVersionInfo(void){
@@ -119,7 +107,7 @@ FUNC(void, COMM_CODE) class_ComM_Unused::ResetInhibitCounter(void){
 FUNC(void, COMM_CODE) class_ComM_Unused::SetECUGroupClassification(void){
 }
 
-/*****************************************************/
-/* EOF                                               */
-/*****************************************************/
+/******************************************************************************/
+/* EOF                                                                        */
+/******************************************************************************/
 
