@@ -40,6 +40,16 @@ class module_ComM:
       FUNC(void, COMM_CODE) DeInitFunction (void);
       FUNC(void, COMM_CODE) GetVersionInfo (void);
       FUNC(void, COMM_CODE) MainFunction   (void);
+
+   private:
+      CONST(Std_TypeVersionInfo, COMM_CONST) VersionInfo = {
+            0x0000
+         ,  0xFFFF
+         ,  0x01
+         ,  '0'
+         ,  '1'
+         ,  '0'
+      };
 };
 
 /******************************************************************************/
