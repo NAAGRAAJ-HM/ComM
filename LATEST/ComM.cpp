@@ -6,11 +6,11 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "module.h"
-#include "CfgComM.h"
-#include "infComM_EcuM.h"
-#include "infComM_Dcm.h"
-#include "infComM_SchM.h"
+#include "module.hpp"
+#include "CfgComM.hpp"
+#include "infComM_EcuM.hpp"
+#include "infComM_Dcm.hpp"
+#include "infComM_SchM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -90,7 +90,7 @@ FUNC(void, COMM_CODE) module_ComM::GetVersionInfo(void){
 FUNC(void, COMM_CODE) module_ComM::MainFunction(void){
 }
 
-#include "ComM_Unused.h"
+#include "ComM_Unused.hpp"
 
 FUNC(void, COMM_CODE) class_ComM_Unused::GetState(void){
 }
