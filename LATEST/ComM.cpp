@@ -7,7 +7,6 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "module.hpp"
-#include "CfgComM.hpp"
 #include "infComM_EcuM.hpp"
 #include "infComM_Dcm.hpp"
 #include "infComM_SchM.hpp"
@@ -36,37 +35,40 @@ class module_ComM:
       public abstract_module
 {
    public:
+      module_ComM(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
+      }
       FUNC(void, COMM_CODE) InitFunction   (void);
       FUNC(void, COMM_CODE) DeInitFunction (void);
-      FUNC(void, COMM_CODE) GetVersionInfo (void);
       FUNC(void, COMM_CODE) MainFunction   (void);
-
-   private:
-      CONST(Std_TypeVersionInfo, COMM_CONST) VersionInfo = {
-            0x0000
-         ,  0xFFFF
-         ,  0x01
-         ,  '0'
-         ,  '1'
-         ,  '0'
-      };
 };
+
+extern VAR(module_ComM, COMM_VAR) ComM;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
 /******************************************************************************/
+CONSTP2VAR(infEcuMClient, COMM_VAR, COMM_CONST) gptrinfEcuMClient_ComM = &ComM;
+CONSTP2VAR(infDcmClient,  COMM_VAR, COMM_CONST) gptrinfDcmClient_ComM  = &ComM;
+CONSTP2VAR(infSchMClient, COMM_VAR, COMM_CONST) gptrinfSchMClient_ComM = &ComM;
 
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
+#include "CfgComM.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_ComM, COMM_VAR) ComM;
-CONSTP2VAR(infEcuMClient, COMM_VAR, COMM_CONST) gptrinfEcuMClient_ComM = &ComM;
-CONSTP2VAR(infDcmClient,  COMM_VAR, COMM_CONST) gptrinfDcmClient_ComM  = &ComM;
-CONSTP2VAR(infSchMClient, COMM_VAR, COMM_CONST) gptrinfSchMClient_ComM = &ComM;
+VAR(module_ComM, COMM_VAR) ComM(
+   {
+         0x0000
+      ,  0xFFFF
+      ,  0x01
+      ,  '0'
+      ,  '1'
+      ,  '0'
+   }
+);
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
@@ -77,14 +79,6 @@ FUNC(void, COMM_CODE) module_ComM::InitFunction(void){
 
 FUNC(void, COMM_CODE) module_ComM::DeInitFunction(void){
    ComM.IsInitDone = E_NOT_OK;
-}
-
-FUNC(void, COMM_CODE) module_ComM::GetVersionInfo(void){
-#if(STD_ON == ComM_DevErrorDetect)
-//TBD: API parameter check
-   Det_ReportError(
-   );
-#endif
 }
 
 FUNC(void, COMM_CODE) module_ComM::MainFunction(void){
