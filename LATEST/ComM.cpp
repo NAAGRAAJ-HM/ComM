@@ -37,10 +37,9 @@ class module_ComM:
    public:
       module_ComM(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
       }
-      FUNC(void, _CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, _CONFIG_DATA, _APPL_CONST) lptrCfgModule
+      FUNC(void, COMM_CODE) InitFunction(
+         CONSTP2CONST(CfgModule_TypeAbstract, COMM_CONFIG_DATA, COMM_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, COMM_CODE) InitFunction   (void);
       FUNC(void, COMM_CODE) DeInitFunction (void);
       FUNC(void, COMM_CODE) MainFunction   (void);
 };
@@ -77,23 +76,39 @@ VAR(module_ComM, COMM_VAR) ComM(
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, COMM_CODE) module_ComM::InitFunction(
-   CONSTP2CONST(CfgComM_Type, CFGCOMM_CONFIG_DATA, CFGCOMM_APPL_CONST) lptrCfgComM
+   CONSTP2CONST(CfgModule_TypeAbstract, COMM_CONFIG_DATA, COMM_APPL_CONST) lptrCfgModule
 ){
-   if(NULL_PTR == lptrCfgComM){
+   if(E_OK == IsInitDone){
 #if(STD_ON == ComM_DevErrorDetect)
       Det_ReportError(
       );
 #endif
    }
    else{
-// check lptrCfgComM for memory faults
+      if(NULL_PTR == lptrCfgModule){
+#if(STD_ON == ComM_DevErrorDetect)
+         Det_ReportError(
+         );
+#endif
+      }
+      else{
+// check lptrCfgModule for memory faults
 // use PBcfg_ComM as back-up configuration
+      }
+      IsInitDone = E_OK;
    }
-   ComM.IsInitDone = E_OK;
 }
 
 FUNC(void, COMM_CODE) module_ComM::DeInitFunction(void){
-   ComM.IsInitDone = E_NOT_OK;
+   if(E_OK != IsInitDone){
+#if(STD_ON == ComM_DevErrorDetect)
+      Det_ReportError(
+      );
+#endif
+   }
+   else{
+      IsInitDone = E_NOT_OK;
+   }
 }
 
 FUNC(void, COMM_CODE) module_ComM::MainFunction(void){
