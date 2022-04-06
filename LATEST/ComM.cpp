@@ -14,18 +14,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define COMM_AR_RELEASE_MAJOR_VERSION                                          4
-#define COMM_AR_RELEASE_MINOR_VERSION                                          3
+#define COMM_AR_RELEASE_VERSION_MAJOR                                          4
+#define COMM_AR_RELEASE_VERSION_MINOR                                          3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(COMM_AR_RELEASE_MAJOR_VERSION != STD_AR_RELEASE_MAJOR_VERSION)
-   #error "Incompatible COMM_AR_RELEASE_MAJOR_VERSION!"
+#if(COMM_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible COMM_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(COMM_AR_RELEASE_MINOR_VERSION != STD_AR_RELEASE_MINOR_VERSION)
-   #error "Incompatible COMM_AR_RELEASE_MINOR_VERSION!"
+#if(COMM_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible COMM_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -63,8 +63,10 @@ CONSTP2VAR(infSchMClient, COMM_VAR, COMM_CONST) gptrinfSchMClient_ComM = &ComM;
 /******************************************************************************/
 VAR(module_ComM, COMM_VAR) ComM(
    {
-         0x0000
-      ,  0xFFFF
+         COMM_AR_RELEASE_VERSION_MAJOR
+      ,  COMM_AR_RELEASE_VERSION_MINOR
+      ,  0x00
+      ,  0xFF
       ,  0x01
       ,  '0'
       ,  '1'
