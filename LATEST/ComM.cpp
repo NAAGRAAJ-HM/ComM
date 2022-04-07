@@ -101,8 +101,8 @@ FUNC(void, COMM_CODE) module_ComM::InitFunction(
             lptrCfg = lptrCfgModule;
          }
          else{
-// use PBcfg_CanIf as back-up configuration
-            lptrCfg = PBcfg_CanIf;
+// use PBcfgCanIf as back-up configuration
+            lptrCfg = &PBcfgComM;
          }
       }
       IsInitDone = E_OK;
