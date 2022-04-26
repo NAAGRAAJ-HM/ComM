@@ -31,8 +31,26 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
+class class_ComM_Functionality{
+   public:
+      FUNC(void, COMM_CODE) GetState                  (void);
+      FUNC(void, COMM_CODE) GetStatus                 (void);
+      FUNC(void, COMM_CODE) GetInhibitionStatus       (void);
+      FUNC(void, COMM_CODE) RequestComMode            (void);
+      FUNC(void, COMM_CODE) GetMaxComMode             (void);
+      FUNC(void, COMM_CODE) GetRequestedComMode       (void);
+      FUNC(void, COMM_CODE) GetCurrentComMode         (void);
+      FUNC(void, COMM_CODE) PreventWakeUp             (void);
+      FUNC(void, COMM_CODE) LimitChannelToNoComMode   (void);
+      FUNC(void, COMM_CODE) LimitECUToNoComMode       (void);
+      FUNC(void, COMM_CODE) ReadInhibitCounter        (void);
+      FUNC(void, COMM_CODE) ResetInhibitCounter       (void);
+      FUNC(void, COMM_CODE) SetECUGroupClassification (void);
+};
+
 class module_ComM:
       public abstract_module
+   ,  public class_ComM_Functionality
 {
    public:
       module_ComM(Std_TypeVersionInfo lVersionInfo) : abstract_module(lVersionInfo){
@@ -84,6 +102,10 @@ FUNC(void, COMM_CODE) module_ComM::InitFunction(
    if(E_OK == IsInitDone){
 #if(STD_ON == ComM_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -92,6 +114,10 @@ FUNC(void, COMM_CODE) module_ComM::InitFunction(
       if(NULL_PTR == lptrCfgModule){
 #if(STD_ON == ComM_DevErrorDetect)
          Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
          );
 #endif
       }
@@ -116,6 +142,10 @@ FUNC(void, COMM_CODE) module_ComM::DeInitFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == ComM_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -132,6 +162,10 @@ FUNC(void, COMM_CODE) module_ComM::MainFunction(void){
    if(E_OK != IsInitDone){
 #if(STD_ON == ComM_DevErrorDetect)
       Det_ReportError(
+      0 //TBD: IdModule
+   ,  0 //TBD: IdInstance
+   ,  0 //TBD: IdApi
+   ,  0 //TBD: IdError
       );
 #endif
    }
@@ -142,60 +176,43 @@ FUNC(void, COMM_CODE) module_ComM::MainFunction(void){
 #endif
 }
 
-class class_ComM_Unused{
-   public:
-      FUNC(void, COMM_CODE) GetState                  (void);
-      FUNC(void, COMM_CODE) GetStatus                 (void);
-      FUNC(void, COMM_CODE) GetInhibitionStatus       (void);
-      FUNC(void, COMM_CODE) RequestComMode            (void);
-      FUNC(void, COMM_CODE) GetMaxComMode             (void);
-      FUNC(void, COMM_CODE) GetRequestedComMode       (void);
-      FUNC(void, COMM_CODE) GetCurrentComMode         (void);
-      FUNC(void, COMM_CODE) PreventWakeUp             (void);
-      FUNC(void, COMM_CODE) LimitChannelToNoComMode   (void);
-      FUNC(void, COMM_CODE) LimitECUToNoComMode       (void);
-      FUNC(void, COMM_CODE) ReadInhibitCounter        (void);
-      FUNC(void, COMM_CODE) ResetInhibitCounter       (void);
-      FUNC(void, COMM_CODE) SetECUGroupClassification (void);
-};
-
-FUNC(void, COMM_CODE) class_ComM_Unused::GetState(void){
+FUNC(void, COMM_CODE) class_ComM_Functionality::GetState(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Unused::GetStatus(void){
+FUNC(void, COMM_CODE) class_ComM_Functionality::GetStatus(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Unused::GetInhibitionStatus(void){
+FUNC(void, COMM_CODE) class_ComM_Functionality::GetInhibitionStatus(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Unused::RequestComMode(void){
+FUNC(void, COMM_CODE) class_ComM_Functionality::RequestComMode(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Unused::GetMaxComMode(void){
+FUNC(void, COMM_CODE) class_ComM_Functionality::GetMaxComMode(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Unused::GetRequestedComMode(void){
+FUNC(void, COMM_CODE) class_ComM_Functionality::GetRequestedComMode(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Unused::GetCurrentComMode(void){
+FUNC(void, COMM_CODE) class_ComM_Functionality::GetCurrentComMode(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Unused::PreventWakeUp(void){
+FUNC(void, COMM_CODE) class_ComM_Functionality::PreventWakeUp(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Unused::LimitChannelToNoComMode(void){
+FUNC(void, COMM_CODE) class_ComM_Functionality::LimitChannelToNoComMode(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Unused::LimitECUToNoComMode(void){
+FUNC(void, COMM_CODE) class_ComM_Functionality::LimitECUToNoComMode(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Unused::ReadInhibitCounter(void){
+FUNC(void, COMM_CODE) class_ComM_Functionality::ReadInhibitCounter(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Unused::ResetInhibitCounter(void){
+FUNC(void, COMM_CODE) class_ComM_Functionality::ResetInhibitCounter(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Unused::SetECUGroupClassification(void){
+FUNC(void, COMM_CODE) class_ComM_Functionality::SetECUGroupClassification(void){
 }
 
 /******************************************************************************/
