@@ -12,7 +12,7 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define COMM_COREFUNCTIONALITIES                                               \
+#define COMM_CORE_FUNCTIONALITIES                                              \
               FUNC(void, COMM_CODE) GetState                  (void);          \
               FUNC(void, COMM_CODE) GetStatus                 (void);          \
               FUNC(void, COMM_CODE) GetInhibitionStatus       (void);          \
@@ -27,7 +27,7 @@
               FUNC(void, COMM_CODE) ResetInhibitCounter       (void);          \
               FUNC(void, COMM_CODE) SetECUGroupClassification (void);          \
 
-#define COMM_COREFUNCTIONALITIES_VIRTUAL                                       \
+#define COMM_CORE_FUNCTIONALITIES_VIRTUAL                                      \
       virtual FUNC(void, COMM_CODE) GetState                  (void) = 0;      \
       virtual FUNC(void, COMM_CODE) GetStatus                 (void) = 0;      \
       virtual FUNC(void, COMM_CODE) GetInhibitionStatus       (void) = 0;      \
@@ -51,7 +51,7 @@
 /******************************************************************************/
 class class_ComM_Functionality{
    public:
-      COMM_COREFUNCTIONALITIES_VIRTUAL
+      COMM_CORE_FUNCTIONALITIES_VIRTUAL
 };
 
 /******************************************************************************/

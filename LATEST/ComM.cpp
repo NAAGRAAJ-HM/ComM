@@ -7,10 +7,9 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
+#include "CfgComM.hpp"
 #include "ComM_core.hpp"
-#include "infComM_EcuM.hpp"
-#include "infComM_Dcm.hpp"
-#include "infComM_SchM.hpp"
+#include "infComM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -44,6 +43,7 @@ class module_ComM:
       );
       FUNC(void, COMM_CODE) DeInitFunction (void);
       FUNC(void, COMM_CODE) MainFunction   (void);
+      COMM_CORE_FUNCTIONALITIES
 };
 
 extern VAR(module_ComM, COMM_VAR) ComM;
@@ -58,7 +58,6 @@ CONSTP2VAR(infSchMClient, COMM_VAR, COMM_CONST) gptrinfSchMClient_ComM = &ComM;
 /******************************************************************************/
 /* PARAMS                                                                     */
 /******************************************************************************/
-#include "CfgComM.hpp"
 
 /******************************************************************************/
 /* OBJECTS                                                                    */
