@@ -159,43 +159,43 @@ FUNC(void, COMM_CODE) module_ComM::MainFunction(void){
 #endif
 }
 
-FUNC(void, COMM_CODE) class_ComM_Functionality::GetState(void){
+FUNC(void, COMM_CODE) module_ComM::GetState(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Functionality::GetStatus(void){
+FUNC(void, COMM_CODE) module_ComM::GetStatus(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Functionality::GetInhibitionStatus(void){
+FUNC(void, COMM_CODE) module_ComM::GetInhibitionStatus(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Functionality::RequestComMode(void){
+FUNC(void, COMM_CODE) module_ComM::RequestComMode(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Functionality::GetMaxComMode(void){
+FUNC(void, COMM_CODE) module_ComM::GetMaxComMode(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Functionality::GetRequestedComMode(void){
+FUNC(void, COMM_CODE) module_ComM::GetRequestedComMode(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Functionality::GetCurrentComMode(void){
+FUNC(void, COMM_CODE) module_ComM::GetCurrentComMode(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Functionality::PreventWakeUp(void){
+FUNC(void, COMM_CODE) module_ComM::PreventWakeUp(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Functionality::LimitChannelToNoComMode(void){
+FUNC(void, COMM_CODE) module_ComM::LimitChannelToNoComMode(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Functionality::LimitECUToNoComMode(void){
+FUNC(void, COMM_CODE) module_ComM::LimitECUToNoComMode(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Functionality::ReadInhibitCounter(void){
+FUNC(void, COMM_CODE) module_ComM::ReadInhibitCounter(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Functionality::ResetInhibitCounter(void){
+FUNC(void, COMM_CODE) module_ComM::ResetInhibitCounter(void){
 }
 
-FUNC(void, COMM_CODE) class_ComM_Functionality::SetECUGroupClassification(void){
+FUNC(void, COMM_CODE) module_ComM::SetECUGroupClassification(void){
 }
 
 /******************************************************************************/
