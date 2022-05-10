@@ -89,7 +89,10 @@ FUNC(void, COMM_CODE) module_ComM::InitFunction(
    CONSTP2CONST(CfgModule_TypeAbstract, COMM_CONFIG_DATA, COMM_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == ComM_InitCheck)
-   if(E_OK != IsInitDone){
+   if(
+         E_OK
+      != IsInitDone
+   ){
 #endif
       if(NULL_PTR != lptrCfgModule){
          if(STD_HIGH){
@@ -127,7 +130,10 @@ FUNC(void, COMM_CODE) module_ComM::InitFunction(
 
 FUNC(void, COMM_CODE) module_ComM::DeInitFunction(void){
 #if(STD_ON == ComM_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == ComM_InitCheck)
       IsInitDone = E_NOT_OK;
@@ -147,7 +153,10 @@ FUNC(void, COMM_CODE) module_ComM::DeInitFunction(void){
 
 FUNC(void, COMM_CODE) module_ComM::MainFunction(void){
 #if(STD_ON == ComM_InitCheck)
-   if(E_OK == IsInitDone){
+   if(
+         E_OK
+      == IsInitDone
+   ){
 #endif
 #if(STD_ON == ComM_InitCheck)
    }
