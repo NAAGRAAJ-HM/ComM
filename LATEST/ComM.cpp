@@ -9,7 +9,7 @@
 #include "Module.hpp"
 #include "CfgComM.hpp"
 #include "ComM_core.hpp"
-#include "infComM.hpp"
+#include "infComM_Exp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -32,6 +32,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_ComM:
+   INTERFACES_EXPORTED_COMM
       public abstract_module
    ,  public class_ComM_Functionality
 {
