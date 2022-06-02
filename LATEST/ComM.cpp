@@ -72,6 +72,10 @@ CONSTP2VAR(infSchMClient, COMM_VAR, COMM_CONST) gptrinfSchMClient_ComM = &ComM;
 /******************************************************************************/
 VAR(module_ComM, COMM_VAR) ComM(
    {
+#if(STD_ON == _ReSIM)
+// char strModuleName[6];
+#else
+#endif
          COMM_AR_RELEASE_VERSION_MAJOR
       ,  COMM_AR_RELEASE_VERSION_MINOR
       ,  0x00
