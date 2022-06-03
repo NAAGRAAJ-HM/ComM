@@ -10,6 +10,7 @@
 #include "CfgComM.hpp"
 #include "ComM_core.hpp"
 #include "infComM_Exp.hpp"
+#include "infComM_Imp.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
