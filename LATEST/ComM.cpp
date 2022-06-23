@@ -130,7 +130,9 @@ FUNC(void, COMM_CODE) module_ComM::InitFunction(
 #endif
 }
 
-FUNC(void, COMM_CODE) module_ComM::DeInitFunction(void){
+FUNC(void, COMM_CODE) module_ComM::DeInitFunction(
+   void
+){
 #if(STD_ON == ComM_InitCheck)
    if(
          E_OK
@@ -153,7 +155,9 @@ FUNC(void, COMM_CODE) module_ComM::DeInitFunction(void){
 #endif
 }
 
-FUNC(void, COMM_CODE) module_ComM::MainFunction(void){
+FUNC(void, COMM_CODE) module_ComM::MainFunction(
+   void
+){
 #if(STD_ON == ComM_InitCheck)
    if(
          E_OK
@@ -175,43 +179,69 @@ FUNC(void, COMM_CODE) module_ComM::MainFunction(void){
 #endif
 }
 
-FUNC(void, COMM_CODE) module_ComM::GetState(void){
+FUNC(void, COMM_CODE) module_ComM::GetState(
+   void
+){
 }
 
-FUNC(void, COMM_CODE) module_ComM::GetStatus(void){
+FUNC(void, COMM_CODE) module_ComM::GetStatus(
+   void
+){
 }
 
-FUNC(void, COMM_CODE) module_ComM::GetInhibitionStatus(void){
+FUNC(void, COMM_CODE) module_ComM::GetInhibitionStatus(
+   void
+){
 }
 
-FUNC(void, COMM_CODE) module_ComM::RequestComMode(void){
+FUNC(void, COMM_CODE) module_ComM::RequestComMode(
+   void
+){
 }
 
-FUNC(void, COMM_CODE) module_ComM::GetMaxComMode(void){
+FUNC(void, COMM_CODE) module_ComM::GetMaxComMode(
+   void
+){
 }
 
-FUNC(void, COMM_CODE) module_ComM::GetRequestedComMode(void){
+FUNC(void, COMM_CODE) module_ComM::GetRequestedComMode(
+   void
+){
 }
 
-FUNC(void, COMM_CODE) module_ComM::GetCurrentComMode(void){
+FUNC(void, COMM_CODE) module_ComM::GetCurrentComMode(
+   void
+){
 }
 
-FUNC(void, COMM_CODE) module_ComM::PreventWakeUp(void){
+FUNC(void, COMM_CODE) module_ComM::PreventWakeUp(
+   void
+){
 }
 
-FUNC(void, COMM_CODE) module_ComM::LimitChannelToNoComMode(void){
+FUNC(void, COMM_CODE) module_ComM::LimitChannelToNoComMode(
+   void
+){
 }
 
-FUNC(void, COMM_CODE) module_ComM::LimitECUToNoComMode(void){
+FUNC(void, COMM_CODE) module_ComM::LimitECUToNoComMode(
+   void
+){
 }
 
-FUNC(void, COMM_CODE) module_ComM::ReadInhibitCounter(void){
+FUNC(void, COMM_CODE) module_ComM::ReadInhibitCounter(
+   void
+){
 }
 
-FUNC(void, COMM_CODE) module_ComM::ResetInhibitCounter(void){
+FUNC(void, COMM_CODE) module_ComM::ResetInhibitCounter(
+   void
+){
 }
 
-FUNC(void, COMM_CODE) module_ComM::SetECUGroupClassification(void){
+FUNC(void, COMM_CODE) module_ComM::SetECUGroupClassification(
+   void
+){
 }
 
 /******************************************************************************/
