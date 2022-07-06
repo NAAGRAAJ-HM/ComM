@@ -7,9 +7,7 @@
 /* #INCLUDES                                                                  */
 /******************************************************************************/
 #include "Module.hpp"
-#include "CfgComM.hpp"
-#include "ComM_core.hpp"
-#include "infComM_Exp.hpp"
+#include "ComM.hpp"
 #include "infComM_Imp.hpp"
 
 /******************************************************************************/
@@ -32,26 +30,6 @@
 /******************************************************************************/
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
-class module_ComM:
-      INTERFACES_EXPORTED_COMM
-      public abstract_module
-   ,  public class_ComM_Functionality
-{
-   private:
-/******************************************************************************/
-/* OBJECTS                                                                    */
-/******************************************************************************/
-
-   public:
-      FUNC(void, COMM_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, COMM_CONFIG_DATA, COMM_APPL_CONST) lptrCfgModule
-      );
-      FUNC(void, COMM_CODE) DeInitFunction (void);
-      FUNC(void, COMM_CODE) MainFunction   (void);
-      COMM_CORE_FUNCTIONALITIES
-};
-
-extern VAR(module_ComM, COMM_VAR) ComM;
 
 /******************************************************************************/
 /* CONSTS                                                                     */
