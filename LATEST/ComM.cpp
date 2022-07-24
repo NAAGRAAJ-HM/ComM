@@ -48,7 +48,8 @@ VAR(module_ComM, COMM_VAR) ComM;
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
 FUNC(void, COMM_CODE) module_ComM::InitFunction(
-   CONSTP2CONST(CfgModule_TypeAbstract, COMM_CONFIG_DATA, COMM_APPL_CONST) lptrCfgModule
+      CONSTP2CONST(ConstModule_TypeAbstract, COMM_CONST,       COMM_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   COMM_CONFIG_DATA, COMM_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == ComM_InitCheck)
    if(
@@ -56,8 +57,12 @@ FUNC(void, COMM_CODE) module_ComM::InitFunction(
       != IsInitDone
    ){
 #endif
-      if(NULL_PTR != lptrCfgModule){
-         lptrCfg = lptrCfgModule;
+      if(
+            (NULL_PTR != lptrConstModule)
+         && (NULL_PTR != lptrCfgModule)
+      ){
+         lptrConst = lptrConstModule;
+         lptrCfg   = lptrCfgModule;
       }
       else{
 #if(STD_ON == ComM_DevErrorDetect)

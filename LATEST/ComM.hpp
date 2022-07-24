@@ -7,6 +7,7 @@
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
+#include "ConstComM.hpp"
 #include "CfgComM.hpp"
 #include "ComM_core.hpp"
 #include "infComM_Exp.hpp"
@@ -31,13 +32,15 @@ class module_ComM:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
+      const ConstComM_Type* lptrConst = (ConstComM_Type*)NULL_PTR;
 
    public:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, COMM_CODE) InitFunction(
-         CONSTP2CONST(CfgModule_TypeAbstract, COMM_CONFIG_DATA, COMM_APPL_CONST) lptrCfgModule
+            CONSTP2CONST(ConstModule_TypeAbstract, COMM_CONST,       COMM_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   COMM_CONFIG_DATA, COMM_APPL_CONST) lptrCfgModule
       );
       FUNC(void, COMM_CODE) DeInitFunction (void);
       FUNC(void, COMM_CODE) MainFunction   (void);
