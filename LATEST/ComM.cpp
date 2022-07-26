@@ -61,7 +61,7 @@ FUNC(void, COMM_CODE) module_ComM::InitFunction(
             (NULL_PTR != lptrConstModule)
          && (NULL_PTR != lptrCfgModule)
       ){
-         lptrConst = lptrConstModule;
+         lptrConst = (const ConstComM_Type*)lptrConstModule;
          lptrCfg   = lptrCfgModule;
       }
       else{
