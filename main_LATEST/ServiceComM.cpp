@@ -13,18 +13,18 @@
 /******************************************************************************/
 /* #DEFINES                                                                   */
 /******************************************************************************/
-#define COMM_AR_RELEASE_VERSION_MAJOR                                          4
-#define COMM_AR_RELEASE_VERSION_MINOR                                          3
+#define SERVICECOMM_AR_RELEASE_VERSION_MAJOR                                          4
+#define SERVICECOMM_AR_RELEASE_VERSION_MINOR                                          3
 
 /******************************************************************************/
 /* MACROS                                                                     */
 /******************************************************************************/
-#if(COMM_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
-   #error "Incompatible COMM_AR_RELEASE_VERSION_MAJOR!"
+#if(SERVICECOMM_AR_RELEASE_VERSION_MAJOR != STD_AR_RELEASE_VERSION_MAJOR)
+   #error "Incompatible SERVICECOMM_AR_RELEASE_VERSION_MAJOR!"
 #endif
 
-#if(COMM_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
-   #error "Incompatible COMM_AR_RELEASE_VERSION_MINOR!"
+#if(SERVICECOMM_AR_RELEASE_VERSION_MINOR != STD_AR_RELEASE_VERSION_MINOR)
+   #error "Incompatible SERVICECOMM_AR_RELEASE_VERSION_MINOR!"
 #endif
 
 /******************************************************************************/
@@ -42,14 +42,14 @@
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-VAR(module_ServiceComM, COMM_VAR) ServiceComM;
+VAR(module_ServiceComM, SERVICECOMM_VAR) ServiceComM;
 
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-FUNC(void, COMM_CODE) module_ServiceComM::InitFunction(
-      CONSTP2CONST(ConstModule_TypeAbstract, COMM_CONST,       COMM_APPL_CONST) lptrConstModule
-   ,  CONSTP2CONST(CfgModule_TypeAbstract,   COMM_CONFIG_DATA, COMM_APPL_CONST) lptrCfgModule
+FUNC(void, SERVICECOMM_CODE) module_ServiceComM::InitFunction(
+      CONSTP2CONST(ConstModule_TypeAbstract, SERVICECOMM_CONST,       SERVICECOMM_APPL_CONST) lptrConstModule
+   ,  CONSTP2CONST(CfgModule_TypeAbstract,   SERVICECOMM_CONFIG_DATA, SERVICECOMM_APPL_CONST) lptrCfgModule
 ){
 #if(STD_ON == ServiceComM_InitCheck)
    if(
@@ -83,14 +83,14 @@ FUNC(void, COMM_CODE) module_ServiceComM::InitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  COMM_E_UNINIT
+         ,  SERVICECOMM_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, COMM_CODE) module_ServiceComM::DeInitFunction(
+FUNC(void, SERVICECOMM_CODE) module_ServiceComM::DeInitFunction(
    void
 ){
 #if(STD_ON == ServiceComM_InitCheck)
@@ -108,14 +108,14 @@ FUNC(void, COMM_CODE) module_ServiceComM::DeInitFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  COMM_E_UNINIT
+         ,  SERVICECOMM_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, COMM_CODE) module_ServiceComM::MainFunction(
+FUNC(void, SERVICECOMM_CODE) module_ServiceComM::MainFunction(
    void
 ){
 #if(STD_ON == ServiceComM_InitCheck)
@@ -132,74 +132,74 @@ FUNC(void, COMM_CODE) module_ServiceComM::MainFunction(
             0 //TBD: IdModule
          ,  0 //TBD: IdInstance
          ,  0 //TBD: IdApi
-         ,  COMM_E_UNINIT
+         ,  SERVICECOMM_E_UNINIT
       );
 #endif
    }
 #endif
 }
 
-FUNC(void, COMM_CODE) module_ServiceComM::GetState(
+FUNC(void, SERVICECOMM_CODE) module_ServiceComM::GetState(
    void
 ){
 }
 
-FUNC(void, COMM_CODE) module_ServiceComM::GetStatus(
+FUNC(void, SERVICECOMM_CODE) module_ServiceComM::GetStatus(
    void
 ){
 }
 
-FUNC(void, COMM_CODE) module_ServiceComM::GetInhibitionStatus(
+FUNC(void, SERVICECOMM_CODE) module_ServiceComM::GetInhibitionStatus(
    void
 ){
 }
 
-FUNC(void, COMM_CODE) module_ServiceComM::RequestServiceComMode(
+FUNC(void, SERVICECOMM_CODE) module_ServiceComM::RequestServiceComMode(
    void
 ){
 }
 
-FUNC(void, COMM_CODE) module_ServiceComM::GetMaxServiceComMode(
+FUNC(void, SERVICECOMM_CODE) module_ServiceComM::GetMaxServiceComMode(
    void
 ){
 }
 
-FUNC(void, COMM_CODE) module_ServiceComM::GetRequestedServiceComMode(
+FUNC(void, SERVICECOMM_CODE) module_ServiceComM::GetRequestedServiceComMode(
    void
 ){
 }
 
-FUNC(void, COMM_CODE) module_ServiceComM::GetCurrentServiceComMode(
+FUNC(void, SERVICECOMM_CODE) module_ServiceComM::GetCurrentServiceComMode(
    void
 ){
 }
 
-FUNC(void, COMM_CODE) module_ServiceComM::PreventWakeUp(
+FUNC(void, SERVICECOMM_CODE) module_ServiceComM::PreventWakeUp(
    void
 ){
 }
 
-FUNC(void, COMM_CODE) module_ServiceComM::LimitChannelToNoServiceComMode(
+FUNC(void, SERVICECOMM_CODE) module_ServiceComM::LimitChannelToNoServiceComMode(
    void
 ){
 }
 
-FUNC(void, COMM_CODE) module_ServiceComM::LimitECUToNoServiceComMode(
+FUNC(void, SERVICECOMM_CODE) module_ServiceComM::LimitECUToNoServiceComMode(
    void
 ){
 }
 
-FUNC(void, COMM_CODE) module_ServiceComM::ReadInhibitCounter(
+FUNC(void, SERVICECOMM_CODE) module_ServiceComM::ReadInhibitCounter(
    void
 ){
 }
 
-FUNC(void, COMM_CODE) module_ServiceComM::ResetInhibitCounter(
+FUNC(void, SERVICECOMM_CODE) module_ServiceComM::ResetInhibitCounter(
    void
 ){
 }
 
-FUNC(void, COMM_CODE) module_ServiceComM::SetECUGroupClassification(
+FUNC(void, SERVICECOMM_CODE) module_ServiceComM::SetECUGroupClassification(
    void
 ){
 }

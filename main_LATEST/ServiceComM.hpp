@@ -24,7 +24,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_ServiceComM:
-      INTERFACES_EXPORTED_COMM
+      INTERFACES_EXMCALPORTED_SERVICECOMM
       public abstract_module
    ,  public class_ServiceComM_Functionality
 {
@@ -38,13 +38,13 @@ class module_ServiceComM:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-      FUNC(void, COMM_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, COMM_CONST,       COMM_APPL_CONST) lptrConstModule
-         ,  CONSTP2CONST(CfgModule_TypeAbstract,   COMM_CONFIG_DATA, COMM_APPL_CONST) lptrCfgModule
+      FUNC(void, SERVICECOMM_CODE) InitFunction(
+            CONSTP2CONST(ConstModule_TypeAbstract, SERVICECOMM_CONST,       SERVICECOMM_APPL_CONST) lptrConstModule
+         ,  CONSTP2CONST(CfgModule_TypeAbstract,   SERVICECOMM_CONFIG_DATA, SERVICECOMM_APPL_CONST) lptrCfgModule
       );
-      FUNC(void, COMM_CODE) DeInitFunction (void);
-      FUNC(void, COMM_CODE) MainFunction   (void);
-      COMM_CORE_FUNCTIONALITIES
+      FUNC(void, SERVICECOMM_CODE) DeInitFunction (void);
+      FUNC(void, SERVICECOMM_CODE) MainFunction   (void);
+      SERVICECOMM_CORE_FUNCTIONALITIES
 };
 
 /******************************************************************************/
@@ -58,7 +58,7 @@ class module_ServiceComM:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-extern VAR(module_ServiceComM, COMM_VAR) ServiceComM;
+extern VAR(module_ServiceComM, SERVICECOMM_VAR) ServiceComM;
 
 /******************************************************************************/
 /* EOF                                                                        */

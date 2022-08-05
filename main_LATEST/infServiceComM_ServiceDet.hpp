@@ -21,7 +21,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 typedef enum{
-      COMM_E_UNINIT
+      SERVICECOMM_E_UNINIT
 }ServiceComM_TypeServiceDetErrorCode;
 
 /******************************************************************************/
