@@ -24,7 +24,7 @@
 /* TYPEDEFS                                                                   */
 /******************************************************************************/
 class module_ServiceComM:
-      INTERFACES_EXMCALPORTED_SERVICECOMM
+      INTERFACES_EXPORTED_SERVICECOMM
       public abstract_module
    ,  public class_ServiceComM_Functionality
 {
