@@ -32,14 +32,14 @@ class module_ServiceComM:
 /******************************************************************************/
 /* OBJECTS                                                                    */
 /******************************************************************************/
-      const ConstServiceComM_Type* lptrConst = (ConstServiceComM_Type*)NULL_PTR;
+      const ConstModule_TypeAbstract* lptrNvMBlocksRom = (ConstModule_TypeAbstract*)NULL_PTR;
 
    public:
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
       FUNC(void, SERVICECOMM_CODE) InitFunction(
-            CONSTP2CONST(ConstModule_TypeAbstract, SERVICECOMM_CONST,       SERVICECOMM_APPL_CONST) lptrConstModule
+            CONSTP2CONST(ConstModule_TypeAbstract, SERVICECOMM_CONST,       SERVICECOMM_APPL_CONST) lptrNvMBlocksRomModule
          ,  CONSTP2CONST(CfgModule_TypeAbstract,   SERVICECOMM_CONFIG_DATA, SERVICECOMM_APPL_CONST) lptrCfgModule
       );
       FUNC(void, SERVICECOMM_CODE) DeInitFunction (void);
