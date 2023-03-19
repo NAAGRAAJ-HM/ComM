@@ -1,13 +1,13 @@
 #pragma once
 /******************************************************************************/
-/* File   : infServiceComM_ServiceSwcEcuM.hpp                                 */
+/* File   : infServiceSwcComMServiceSwcEcuM.hpp                               */
 /* Author : NAGARAJA HM (c) since 1982. All rights reserved.                  */
 /******************************************************************************/
 
 /******************************************************************************/
 /* #INCLUDES                                                                  */
 /******************************************************************************/
-#include "CfgServiceComM.hpp"
+#include "CfgServiceSwcComM.hpp"
 
 /******************************************************************************/
 /* #DEFINES                                                                   */
@@ -24,8 +24,8 @@
 /******************************************************************************/
 /* FUNCTIONS                                                                  */
 /******************************************************************************/
-extern FUNC(void, SERVICECOMM_CODE) ServiceComM_InitFunction   (const CfgServiceComM_Type*   CfgServiceComM_ptr);
-extern FUNC(void, SERVICECOMM_CODE) ServiceComM_DeInitFunction (void);
+extern FUNC(void, SERVICESWCCOMM_CODE) infServiceSwcComMServiceSwcEcuM_InitFunction   (const CfgServiceSwcComM_Type*   CfgServiceSwcComM_ptr);
+extern FUNC(void, SERVICESWCCOMM_CODE) infServiceSwcComMServiceSwcEcuM_DeInitFunction (void);
 
 /******************************************************************************/
 /* CONSTS                                                                     */
