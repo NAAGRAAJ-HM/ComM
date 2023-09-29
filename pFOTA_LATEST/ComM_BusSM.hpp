@@ -3,7 +3,7 @@
 #ifndef COMM_BUSSM_H
 #define COMM_BUSSM_H
 
-#include "ComM_Types.hpp"
+#include "Types_SwcServiceComM.hpp"
 
 #define COMM_START_SEC_CODE
 #include "MemMap.hpp"
