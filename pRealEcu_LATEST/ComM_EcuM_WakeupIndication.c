@@ -1,12 +1,10 @@
 #include "Std_Types.hpp"
 
-#include "Types_SwcServiceComM.hpp"
-
 #include "ComM_Priv.hpp"
 
 #define COMM_START_SEC_CODE
 #include "ComM_Cfg_MemMap.hpp"
-FUNC (void, COMM_CODE) ComM_EcuM_WakeUpIndication
+FUNC (void,COMM_CODE) ComM_EcuM_WakeUpIndication
                                             (
                                                 VAR(NetworkHandleType,AUTOMATIC) Channel
                                             )
