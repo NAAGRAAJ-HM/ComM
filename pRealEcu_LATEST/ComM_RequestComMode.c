@@ -20,7 +20,7 @@ FUNC(Std_ReturnType,COMM_CODE) ComM_RequestComMode
 
    P2VAR(ComM_ChannelVarType, AUTOMATIC, COMM_APPL_DATA) channelRamPtr_ps;
    P2VAR(ComM_UserVarType, AUTOMATIC, COMM_APPL_DATA) userRamPtr_ps;
-   P2CONST(ComM_UsersType,AUTOMATIC,COMM_APPL_CONST) userConfigPtr_pcs;
+   P2CONST(ComM_UsersType, AUTOMATIC,COMM_APPL_CONST) userConfigPtr_pcs;
    VAR(ComM_ModeType, AUTOMATIC) previousUserRequest_t;
    VAR(ComM_ModeType, AUTOMATIC) currentUserRequest_t;
 

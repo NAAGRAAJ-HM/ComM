@@ -6,8 +6,8 @@
 #include "ComM_Cfg_MemMap.hpp"
 FUNC (void,COMM_CODE)ComM_CommunicationAllowed
                                                 (
-                                                        VAR(NetworkHandleType,AUTOMATIC) Channel
-   ,     VAR(boolean,AUTOMATIC) Allowed
+                                                        VAR(NetworkHandleType, AUTOMATIC) Channel
+   ,     VAR(boolean, AUTOMATIC) Allowed
                                                 )
 {
 

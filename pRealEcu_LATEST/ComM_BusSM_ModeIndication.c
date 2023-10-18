@@ -7,8 +7,8 @@
 #include "ComM_Cfg_MemMap.hpp"
 FUNC(void,COMM_CODE) ComM_BusSM_ModeIndication
                                         (
-                                        VAR(NetworkHandleType,AUTOMATIC ) Channel 
-   ,     P2VAR(ComM_ModeType,AUTOMATIC,COMM_APPL_DATA) ComMode
+                                        VAR(NetworkHandleType, AUTOMATIC ) Channel 
+   ,     P2VAR(ComM_ModeType, AUTOMATIC,COMM_APPL_DATA) ComMode
                                         )
 {
 

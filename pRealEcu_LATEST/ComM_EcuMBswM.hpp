@@ -6,13 +6,13 @@
 
 extern FUNC (void,COMM_CODE) ComM_EcuM_WakeUpIndication
 (
-        VAR(NetworkHandleType,AUTOMATIC) Channel
+        VAR(NetworkHandleType, AUTOMATIC) Channel
 );
 
 extern FUNC(void,COMM_CODE) ComM_CommunicationAllowed
 (
-        VAR(NetworkHandleType,AUTOMATIC) Channel
-   ,     VAR(boolean,AUTOMATIC) Allowed
+        VAR(NetworkHandleType, AUTOMATIC) Channel
+   ,     VAR(boolean, AUTOMATIC) Allowed
 );
 
 #endif

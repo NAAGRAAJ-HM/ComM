@@ -15,7 +15,7 @@ LOCAL_INLINE uint32 ComM_CompareVersionInfo(P2CONST(Std_VersionInfoType, AUTOMAT
 #endif
 
 #if(COMM_CONFIGURATION_VARIANT != COMM_VARIANT_PRECOMPILE)
-P2CONST(ComM_GlobalConfigType,AUTOMATIC,COMM_APPL_CONST) ComM_GlobalConfigPtr_pgcs;
+P2CONST(ComM_GlobalConfigType, AUTOMATIC,COMM_APPL_CONST) ComM_GlobalConfigPtr_pgcs;
 #endif
 
 #define COMM_START_SEC_CODE
@@ -23,13 +23,13 @@ P2CONST(ComM_GlobalConfigType,AUTOMATIC,COMM_APPL_CONST) ComM_GlobalConfigPtr_pg
 
 FUNC(void,COMM_CODE) ComM_Init
                             (
-                             P2CONST(Type_CfgSwcServiceComM_st,AUTOMATIC,COMM_APPL_CONST) config
+                             P2CONST(Type_CfgSwcServiceComM_st, AUTOMATIC,COMM_APPL_CONST) config
                             )
 
 {
 
-   VAR(uint8,AUTOMATIC) ChannelIndex;
-   VAR(ComM_UserHandleType,AUTOMATIC) UserIndex;
+   VAR(uint8, AUTOMATIC) ChannelIndex;
+   VAR(ComM_UserHandleType, AUTOMATIC) UserIndex;
    P2VAR(ComM_ChannelVarType, AUTOMATIC, COMM_APPL_DATA) channelRamPtr_ps;
    P2VAR(ComM_UserVarType, AUTOMATIC, COMM_APPL_DATA) userRamPtr_ps;
 #if((COMM_FULLCOMREQ_NOTIF != STD_OFF)&&(COMM_RTE_SUPPORT != STD_OFF))
@@ -38,19 +38,19 @@ FUNC(void,COMM_CODE) ComM_Init
 #endif
 
 #if(COMM_NVM_ENABLED)
-   VAR(NvM_RequestResultType,AUTOMATIC) NvM_Status;
+   VAR(NvM_RequestResultType, AUTOMATIC) NvM_Status;
    VAR(Std_ReturnType, AUTOMATIC) Ret_NvM_Readval_u8;
    VAR(Std_ReturnType, AUTOMATIC) Ret_NvM_Error_Statusval_u8;
 #endif
 
    P2VAR(ComM_GlobalVarType, AUTOMATIC, COMM_APPL_DATA) globalRamPtr_ps;
-   P2CONST(ComM_UsersType,AUTOMATIC,COMM_APPL_CONST) userConfigPtr_pcs;
+   P2CONST(ComM_UsersType, AUTOMATIC,COMM_APPL_CONST) userConfigPtr_pcs;
 #if(COMM_INHIBITION_ENABLED)
-   P2CONST(ComM_ChannelType,AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs;
+   P2CONST(ComM_ChannelType, AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs;
 #endif
 
 #if(COMM_PNC_ENABLED != STD_OFF)
-   VAR(uint8,AUTOMATIC) PncIndex;
+   VAR(uint8, AUTOMATIC) PncIndex;
    P2VAR(ComM_PncRamStructType, AUTOMATIC, COMM_APPL_DATA) pncRamPtr_ps;
 #endif
 
@@ -68,7 +68,7 @@ FUNC(void,COMM_CODE) ComM_Init
    if(ComM_CompareVersionInfo(&versionInfo, config->versionInfo) != C_ZERO){
         return;
    }
-   ComM_GlobalConfigPtr_pgcs = (P2CONST(ComM_GlobalConfigType,AUTOMATIC,COMM_APPL_CONST))(config->ComM_GlobalConfigData_pcs);
+   ComM_GlobalConfigPtr_pgcs = (P2CONST(ComM_GlobalConfigType, AUTOMATIC,COMM_APPL_CONST))(config->ComM_GlobalConfigData_pcs);
 #else
     (void)config;
 #endif

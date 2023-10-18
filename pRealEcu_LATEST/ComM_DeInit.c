@@ -12,12 +12,12 @@ FUNC(void,COMM_CODE) ComM_DeInit(void){
 
 #if(COMM_DEV_ERROR_DETECT != STD_OFF)
 #endif
-   VAR(uint8 ,AUTOMATIC)  ChannelIndexCtr;
+   VAR(uint8 , AUTOMATIC)  ChannelIndexCtr;
    P2VAR(ComM_GlobalVarType, AUTOMATIC, COMM_APPL_DATA) globalRamPtr_ps;
 
 #if(COMM_INHIBITION_ENABLED) && (COMM_NVM_ENABLED)
    VAR(Std_ReturnType, AUTOMATIC) Ret_NvM_Writeval_u8;
-   VAR(uint8,AUTOMATIC) ChannelId;
+   VAR(uint8, AUTOMATIC) ChannelId;
    P2VAR(ComM_ChannelVarType, AUTOMATIC, COMM_APPL_DATA) channelRamPtr_ps;
 #endif
 

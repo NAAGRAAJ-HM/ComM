@@ -6,7 +6,7 @@
 #include "ComM_Cfg_MemMap.hpp"
 FUNC (void,COMM_CODE) ComM_EcuM_WakeUpIndication
                                             (
-                                                VAR(NetworkHandleType,AUTOMATIC) Channel
+                                                VAR(NetworkHandleType, AUTOMATIC) Channel
                                             )
 {
 

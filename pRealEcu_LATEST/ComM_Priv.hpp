@@ -132,25 +132,25 @@ typedef struct{
 typedef struct
    {
 #if(COMM_PNC_ENABLED != STD_OFF)
-   VAR(uint8,AUTOMATIC) PnTxSigVal_u8[8];
+   VAR(uint8, AUTOMATIC) PnTxSigVal_u8[8];
 #endif
-   VAR(ComM_StateType,AUTOMATIC) ChannelState_e;
-   VAR(uint32,AUTOMATIC) LightTimeoutCtr_u32;
-   VAR(uint16,AUTOMATIC) MinFullComTimeoutCtr_u16;
-   VAR(ComM_ModeType,AUTOMATIC) ChannelMode_u8;
-   VAR(ComM_ModeType,AUTOMATIC) BusSmMode_u8;
-   VAR(uint8,AUTOMATIC) UserRequestCtr_u8;
-   VAR(uint8,AUTOMATIC) PassiveRequestState_u8;
-   VAR(uint8,AUTOMATIC) PncRequestCtr_u8;
-   VAR(ComM_InhibitionStatusType,AUTOMATIC) InhibitionReqStatus_u8;
-   VAR(boolean,AUTOMATIC) NmNetworkRequestStatus_b;
-   VAR(ComM_DiagnosticType,AUTOMATIC) DiagnosticRequestState_b;
-   VAR(boolean,AUTOMATIC) CommunicationAllowed_b;
-   VAR(boolean,AUTOMATIC) NmBusSleepIndicationStatus_b;
-   VAR(boolean,AUTOMATIC) NmPrepareBusSleepIndicationStatus_b;
-   VAR(boolean,AUTOMATIC) NmNetworkModeStatus_b;
+   VAR(ComM_StateType, AUTOMATIC) ChannelState_e;
+   VAR(uint32, AUTOMATIC) LightTimeoutCtr_u32;
+   VAR(uint16, AUTOMATIC) MinFullComTimeoutCtr_u16;
+   VAR(ComM_ModeType, AUTOMATIC) ChannelMode_u8;
+   VAR(ComM_ModeType, AUTOMATIC) BusSmMode_u8;
+   VAR(uint8, AUTOMATIC) UserRequestCtr_u8;
+   VAR(uint8, AUTOMATIC) PassiveRequestState_u8;
+   VAR(uint8, AUTOMATIC) PncRequestCtr_u8;
+   VAR(ComM_InhibitionStatusType, AUTOMATIC) InhibitionReqStatus_u8;
+   VAR(boolean, AUTOMATIC) NmNetworkRequestStatus_b;
+   VAR(ComM_DiagnosticType, AUTOMATIC) DiagnosticRequestState_b;
+   VAR(boolean, AUTOMATIC) CommunicationAllowed_b;
+   VAR(boolean, AUTOMATIC) NmBusSleepIndicationStatus_b;
+   VAR(boolean, AUTOMATIC) NmPrepareBusSleepIndicationStatus_b;
+   VAR(boolean, AUTOMATIC) NmNetworkModeStatus_b;
 #if((COMM_FULLCOMREQ_NOTIF != STD_OFF)&&(COMM_RTE_SUPPORT != STD_OFF))
-   VAR(boolean,AUTOMATIC) ComMFullComReqNotify_b;
+   VAR(boolean, AUTOMATIC) ComMFullComReqNotify_b;
 #endif
    }ComM_ChannelVarType;
 
@@ -158,41 +158,41 @@ typedef struct
    {
      VAR(uint16, AUTOMATIC) WakeUpInhibitionCtr_u16;
      VAR(uint16, AUTOMATIC) LimitToNoComCtr_u16;
-     VAR(ComM_ModeType,AUTOMATIC) RequestedUserMode_t;
-     VAR(ComM_ModeType,AUTOMATIC) IndicatedUserMode_t;
+     VAR(ComM_ModeType, AUTOMATIC) RequestedUserMode_t;
+     VAR(ComM_ModeType, AUTOMATIC) IndicatedUserMode_t;
      VAR(uint8, AUTOMATIC) numChannelsInFullCom_u8;
      VAR(uint8, AUTOMATIC) numChannelsInSilentCom_u8;
      VAR(uint8, AUTOMATIC) numChannelsInNoCom_u8;
    }ComM_UserVarType;
 
 typedef struct{
-   VAR(ComM_PncModeType,AUTOMATIC) PncState_e;
-   VAR(uint16,AUTOMATIC) PrepareSleepTimer_u16;
-   VAR(uint8,AUTOMATIC) UserRequestCnt_u8;
-   VAR(uint8,AUTOMATIC) EIRACnt_u8;
+   VAR(ComM_PncModeType, AUTOMATIC) PncState_e;
+   VAR(uint16, AUTOMATIC) PrepareSleepTimer_u16;
+   VAR(uint8, AUTOMATIC) UserRequestCnt_u8;
+   VAR(uint8, AUTOMATIC) EIRACnt_u8;
 #if(COMM_INHIBITION_ENABLED)
    VAR(uint16, AUTOMATIC) LimitToNoComCtr_u16;
    VAR(uint16, AUTOMATIC) WakeUpInhibitionCtr_u16;
 #endif
 #if(COMM_PNC_GW_ENABLED != STD_OFF)
-   VAR(uint8,AUTOMATIC) ERACnt_u8;
-   VAR(uint8,AUTOMATIC) ActiveERACnt_u8;
-   VAR(boolean,AUTOMATIC) ActiveERAStateOld_b;
+   VAR(uint8, AUTOMATIC) ERACnt_u8;
+   VAR(uint8, AUTOMATIC) ActiveERACnt_u8;
+   VAR(boolean, AUTOMATIC) ActiveERAStateOld_b;
 #endif
-   VAR(boolean,AUTOMATIC) WakeUpStatus_b;
+   VAR(boolean, AUTOMATIC) WakeUpStatus_b;
 }ComM_PncRamStructType;
 
 typedef struct{
-   VAR(boolean,AUTOMATIC) ActiveRequest_b;
-   VAR(boolean,AUTOMATIC) PassiveRequest_b;
+   VAR(boolean, AUTOMATIC) ActiveRequest_b;
+   VAR(boolean, AUTOMATIC) PassiveRequest_b;
 }ComM_RequestStructType;
 
 typedef struct{
-   VAR(boolean,AUTOMATIC) activeRequestState_b;
-   VAR(boolean,AUTOMATIC) wakeupRequestState_b;
-   VAR(boolean,AUTOMATIC) passiveRequestState_b;
+   VAR(boolean, AUTOMATIC) activeRequestState_b;
+   VAR(boolean, AUTOMATIC) wakeupRequestState_b;
+   VAR(boolean, AUTOMATIC) passiveRequestState_b;
 #if(COMM_PNC_GW_ENABLED != STD_OFF)
-   VAR(boolean,AUTOMATIC) activeERAState_b;
+   VAR(boolean, AUTOMATIC) activeERAState_b;
 #endif
 }ComM_PncEventStructType;
 
@@ -226,7 +226,7 @@ extern VAR(boolean,COMM_VAR) ComM_ERA_RxSigVal[][COMM_NO_OF_PNCS];
 #include "ComM_Cfg_MemMap.hpp"
 
 #if(COMM_CONFIGURATION_VARIANT != COMM_VARIANT_PRECOMPILE)
-extern P2CONST(ComM_GlobalConfigType,AUTOMATIC,COMM_APPL_CONST) ComM_GlobalConfigPtr_pgcs;
+extern P2CONST(ComM_GlobalConfigType, AUTOMATIC,COMM_APPL_CONST) ComM_GlobalConfigPtr_pgcs;
 #endif
 
 #define COMM_START_SEC_CODE
@@ -240,10 +240,10 @@ extern FUNC(void, COMM_CODE) ComM_LTranslateInhibitionStatus(
    ComM_InhibitionType InhibitionType,
    boolean Status);
 extern FUNC(void,COMM_CODE) ComM_LPncToChannelInterface(PNCHandleType PncIndex,ComM_PncModeType PncState,ComM_PncModeType PncPreviousState);
-extern FUNC(void, COMM_CODE) ComM_LPncMainFunction (VAR(PNCHandleType,AUTOMATIC) PncIndex);
+extern FUNC(void, COMM_CODE) ComM_LPncMainFunction (VAR(PNCHandleType, AUTOMATIC) PncIndex);
 extern FUNC(void,COMM_CODE) ComM_EIRA_CallBack(uint8 PnBusId);
 extern FUNC(void,COMM_CODE) ComM_ERA_CallBack(uint8 PnBusId,ComM_PncGatewayType channelGwType);
-extern FUNC(void,COMM_CODE) ComM_LChannelMainFunction (VAR(NetworkHandleType,AUTOMATIC) ChannelIndex);
+extern FUNC(void,COMM_CODE) ComM_LChannelMainFunction (VAR(NetworkHandleType, AUTOMATIC) ChannelIndex);
 extern FUNC(ComM_ModeType, COMM_CODE) ComM_LgetLeastBusSmMode(ComM_UserHandleType UserIndex);
 extern FUNC(void, COMM_CODE) ComM_LRteNotifyLowestComMode (ComM_UserHandleType UserIndex);
 extern FUNC(void, COMM_CODE) ComM_LSyncWakeUpIndication(void);

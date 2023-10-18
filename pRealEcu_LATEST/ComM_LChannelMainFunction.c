@@ -5,8 +5,8 @@
 LOCAL_INLINE FUNC(void, COMM_CODE) ComM_ModeHandling
                                                     (
                                                          P2VAR(ComM_ChannelVarType, AUTOMATIC,COMM_APPL_DATA) channelRamPtr_ps
-   ,     P2CONST(ComM_ChannelType,AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs
-   ,     VAR(ComM_ModeType,AUTOMATIC) channelMode_e
+   ,     P2CONST(ComM_ChannelType, AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs
+   ,     VAR(ComM_ModeType, AUTOMATIC) channelMode_e
    ,     boolean entryToMode_b
                                                     );
 
@@ -27,7 +27,7 @@ LOCAL_INLINE FUNC(ComM_StateType,COMM_CODE) ComM_FullComReadySleep_StateHandling
                                                     (
                                                         P2VAR(ComM_RequestStructType, AUTOMATIC, COMM_APPL_DATA) requestStructPtr_ps
    ,     P2VAR(ComM_ChannelVarType, AUTOMATIC,COMM_APPL_DATA) channelRamPtr_ps
-   ,     P2CONST(ComM_ChannelType,AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs
+   ,     P2CONST(ComM_ChannelType, AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs
    ,     ComM_StateType previousstate_e
    ,     uint8 numStateChanges_u8
                                                     );
@@ -36,7 +36,7 @@ LOCAL_INLINE FUNC(ComM_StateType,COMM_CODE) ComM_FullComNetworkReq_StateHandling
                                                     (
                                                         P2VAR(ComM_RequestStructType, AUTOMATIC, COMM_APPL_DATA) requestStructPtr_ps
    ,     P2VAR(ComM_ChannelVarType, AUTOMATIC,COMM_APPL_DATA) channelRamPtr_ps
-   ,     P2CONST(ComM_ChannelType,AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs
+   ,     P2CONST(ComM_ChannelType, AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs
    ,     ComM_StateType previousstate_e
                                                     );
 
@@ -45,15 +45,15 @@ LOCAL_INLINE FUNC(ComM_StateType,COMM_CODE) ComM_SilentCom_StateHandling
                                                     (
                                                             P2VAR(ComM_RequestStructType, AUTOMATIC, COMM_APPL_DATA) requestStructPtr_ps
    ,     P2VAR(ComM_ChannelVarType, AUTOMATIC,COMM_APPL_DATA) channelRamPtr_ps
-   ,     P2CONST(ComM_ChannelType,AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs
+   ,     P2CONST(ComM_ChannelType, AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs
    ,     ComM_StateType previousstate_e
                                                     );
 
 #endif
 
-LOCAL_INLINE FUNC(ComM_ModeType,AUTOMATIC) ComM_getMode (VAR(ComM_StateType,AUTOMATIC) channelState_e);
+LOCAL_INLINE FUNC(ComM_ModeType, AUTOMATIC) ComM_getMode (VAR(ComM_StateType, AUTOMATIC) channelState_e);
 
-LOCAL_INLINE FUNC(void, COMM_CODE) ComM_LNotifyChannelMode (VAR(NetworkHandleType,AUTOMATIC) ChannelIndex);
+LOCAL_INLINE FUNC(void, COMM_CODE) ComM_LNotifyChannelMode (VAR(NetworkHandleType, AUTOMATIC) ChannelIndex);
 
 #if((COMM_FULLCOMREQ_NOTIF != STD_OFF)&&(COMM_RTE_SUPPORT != STD_OFF))
 LOCAL_INLINE FUNC(void,COMM_CODE) ComM_LCallRteWrite (VAR(uint8, COMM_VAR) ChannelIndex );
@@ -63,18 +63,18 @@ LOCAL_INLINE FUNC(void,COMM_CODE) ComM_LCallRteWrite (VAR(uint8, COMM_VAR) Chann
 #include "ComM_Cfg_MemMap.hpp"
 FUNC(void, COMM_CODE) ComM_LChannelMainFunction
                                                 (
-                                                    VAR(NetworkHandleType,AUTOMATIC) ChannelIndex
+                                                    VAR(NetworkHandleType, AUTOMATIC) ChannelIndex
                                                 )
 {
 
-   VAR(ComM_StateType,AUTOMATIC)  channelState_e;
-   VAR(ComM_StateType,AUTOMATIC) previousstate_e;
-   VAR(ComM_ModeType,AUTOMATIC) channelMode_e;
-   VAR(ComM_ModeType,AUTOMATIC) busSmMode_e;
+   VAR(ComM_StateType, AUTOMATIC)  channelState_e;
+   VAR(ComM_StateType, AUTOMATIC) previousstate_e;
+   VAR(ComM_ModeType, AUTOMATIC) channelMode_e;
+   VAR(ComM_ModeType, AUTOMATIC) busSmMode_e;
    VAR(ComM_RequestStructType,COMM_VAR) ComM_RequestStruct;
 
    P2VAR(ComM_ChannelVarType, AUTOMATIC, COMM_APPL_DATA) channelRamPtr_ps;
-   P2CONST(ComM_ChannelType,AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs;
+   P2CONST(ComM_ChannelType, AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs;
    P2VAR(ComM_RequestStructType, AUTOMATIC, COMM_APPL_DATA) requestStructPtr_ps;
    uint8 numStateChanges_u8;
    boolean stateChangePossible_b;
@@ -258,7 +258,7 @@ LOCAL_INLINE FUNC(ComM_StateType,COMM_CODE) ComM_NoComNoPending_StateHandling
    ,     ComM_StateType previousstate_e
                                                     )
 {
-   VAR(ComM_StateType,AUTOMATIC) channelState_e;
+   VAR(ComM_StateType, AUTOMATIC) channelState_e;
 
    channelState_e = COMM_NO_COM_NO_PENDING_REQUEST;
 
@@ -289,7 +289,7 @@ LOCAL_INLINE FUNC(ComM_StateType,COMM_CODE) ComM_NoComPending_StateHandling
                                                         )
 {
 
-   VAR(ComM_StateType,AUTOMATIC) channelState_e;
+   VAR(ComM_StateType, AUTOMATIC) channelState_e;
 
    channelState_e = COMM_NO_COM_REQUEST_PENDING;
 
@@ -333,12 +333,12 @@ LOCAL_INLINE FUNC(ComM_StateType,COMM_CODE) ComM_FullComNetworkReq_StateHandling
                                                         (
                                                             P2VAR(ComM_RequestStructType, AUTOMATIC, COMM_APPL_DATA) requestStructPtr_ps
    ,     P2VAR(ComM_ChannelVarType, AUTOMATIC,COMM_APPL_DATA) channelRamPtr_ps
-   ,     P2CONST(ComM_ChannelType,AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs
+   ,     P2CONST(ComM_ChannelType, AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs
    ,     ComM_StateType previousstate_e
                                                         )
 {
 
-   VAR(ComM_StateType,AUTOMATIC) channelState_e;
+   VAR(ComM_StateType, AUTOMATIC) channelState_e;
 
    channelState_e = COMM_FULL_COM_NETWORK_REQUESTED;
 
@@ -480,13 +480,13 @@ LOCAL_INLINE FUNC(ComM_StateType,COMM_CODE) ComM_FullComReadySleep_StateHandling
                                                 (
                                                     P2VAR(ComM_RequestStructType, AUTOMATIC, COMM_APPL_DATA) requestStructPtr_ps
    ,     P2VAR(ComM_ChannelVarType, AUTOMATIC,COMM_APPL_DATA) channelRamPtr_ps
-   ,     P2CONST(ComM_ChannelType,AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs
+   ,     P2CONST(ComM_ChannelType, AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs
    ,     ComM_StateType previousstate_e
    ,     uint8 numStateChanges_u8
                                                 )
 
 {
-   VAR(ComM_StateType,AUTOMATIC) channelState_e;
+   VAR(ComM_StateType, AUTOMATIC) channelState_e;
 
    channelState_e = COMM_FULL_COM_READY_SLEEP;
 
@@ -667,11 +667,11 @@ LOCAL_INLINE FUNC(ComM_StateType,COMM_CODE) ComM_SilentCom_StateHandling
                                                 (
                                                     P2VAR(ComM_RequestStructType, AUTOMATIC, COMM_APPL_DATA) requestStructPtr_ps
    ,     P2VAR(ComM_ChannelVarType, AUTOMATIC,COMM_APPL_DATA) channelRamPtr_ps
-   ,     P2CONST(ComM_ChannelType,AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs
+   ,     P2CONST(ComM_ChannelType, AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs
    ,     ComM_StateType previousstate_e
                                                 )
 {
-   VAR(ComM_StateType,AUTOMATIC) channelState_e;
+   VAR(ComM_StateType, AUTOMATIC) channelState_e;
 
    channelState_e = COMM_SILENT_COM;
 
@@ -714,14 +714,14 @@ LOCAL_INLINE FUNC(ComM_StateType,COMM_CODE) ComM_SilentCom_StateHandling
 LOCAL_INLINE FUNC(void, COMM_CODE) ComM_ModeHandling
                                             (
                                                  P2VAR(ComM_ChannelVarType, AUTOMATIC,COMM_APPL_DATA) channelRamPtr_ps
-   ,     P2CONST(ComM_ChannelType,AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs
-   ,     VAR(ComM_ModeType,AUTOMATIC) channelMode_e 
+   ,     P2CONST(ComM_ChannelType, AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs
+   ,     VAR(ComM_ModeType, AUTOMATIC) channelMode_e 
    ,     boolean entryToMode_b
                                             )
 {
    boolean requestBusSm_b;
-   VAR(ComM_ModeType,AUTOMATIC) busSmMode_e;
-   P2CONST(ComM_BusSmApiType,AUTOMATIC,COMM_APPL_CONST) busSm_funcPtr;
+   VAR(ComM_ModeType, AUTOMATIC) busSmMode_e;
+   P2CONST(ComM_BusSmApiType, AUTOMATIC,COMM_APPL_CONST) busSm_funcPtr;
 
    busSmMode_e = channelRamPtr_ps->BusSmMode_u8;
    busSm_funcPtr = &ComM_BusSmApi[channelConfigPtr_pcs->BusType_e];
@@ -785,11 +785,11 @@ LOCAL_INLINE FUNC(void, COMM_CODE) ComM_ModeHandling
    }
 }
 
-LOCAL_INLINE FUNC(void, COMM_CODE) ComM_LNotifyChannelMode(VAR(NetworkHandleType,AUTOMATIC) ChannelIndex)
+LOCAL_INLINE FUNC(void, COMM_CODE) ComM_LNotifyChannelMode(VAR(NetworkHandleType, AUTOMATIC) ChannelIndex)
 {
 
    P2VAR(ComM_ChannelVarType, AUTOMATIC, COMM_APPL_DATA) channelRamPtr_ps;
-   VAR(ComM_ModeType,AUTOMATIC) channelMode_e;
+   VAR(ComM_ModeType, AUTOMATIC) channelMode_e;
 
    channelRamPtr_ps = &ComM_ChannelStruct[ChannelIndex];
 
@@ -815,9 +815,9 @@ LOCAL_INLINE FUNC(void, COMM_CODE) ComM_LNotifyChannelMode(VAR(NetworkHandleType
 #endif
 }
 
-LOCAL_INLINE FUNC(ComM_ModeType,AUTOMATIC) ComM_getMode (VAR(ComM_StateType,AUTOMATIC) channelState_e)
+LOCAL_INLINE FUNC(ComM_ModeType, AUTOMATIC) ComM_getMode (VAR(ComM_StateType, AUTOMATIC) channelState_e)
 {
-   VAR(ComM_ModeType,AUTOMATIC) channelMode_e;
+   VAR(ComM_ModeType, AUTOMATIC) channelMode_e;
    channelMode_e = COMM_NO_COMMUNICATION;
 
    switch(channelState_e)
@@ -860,7 +860,7 @@ LOCAL_INLINE FUNC(void,COMM_CODE) ComM_LCallRteWrite
                          VAR(uint8, COMM_VAR) ChannelIndex
                          )
 {
-   P2CONST(ComM_ChannelType,AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs;
+   P2CONST(ComM_ChannelType, AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs;
    channelConfigPtr_pcs= &(COMM_GET_CHANNEL_LIST[ChannelIndex]);
    if(channelConfigPtr_pcs->ComMFullCommRequestNotificationEnabled == TRUE)
    {

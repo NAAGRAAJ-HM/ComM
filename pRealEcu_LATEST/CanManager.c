@@ -15,7 +15,7 @@
 #include "DemManagerX.hpp"
 #include "GpioX.hpp"
 #include "CanTrcv.hpp"
-#include "version.hpp"
+#include "CfgSwcServiceStartUp.hpp"
 
        S_SignalMissingDTCCnt SDTCMissingSigCnt;
 static Com_IpduGroupVector Vector_IPduGrpVctr;

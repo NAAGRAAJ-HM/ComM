@@ -52,13 +52,13 @@ FUNC(void,COMM_CODE) ComM_LPncToChannelInterface
 
 {
 
-   VAR(uint8,AUTOMATIC) loopCtr_u8;
-   VAR(uint8,AUTOMATIC) ChannelId;
-   VAR(uint8,AUTOMATIC) numChannels;
+   VAR(uint8, AUTOMATIC) loopCtr_u8;
+   VAR(uint8, AUTOMATIC) ChannelId;
+   VAR(uint8, AUTOMATIC) numChannels;
 
    P2VAR(ComM_ChannelVarType, AUTOMATIC, COMM_APPL_DATA) channelRamPtr_ps;
-   P2CONST(ComM_PncConfigStruct_t,AUTOMATIC,COMM_APPL_CONST) pncConfigPtr_pcs;
-   P2CONST(ComM_ChannelType,AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs;
+   P2CONST(ComM_PncConfigStruct_t, AUTOMATIC,COMM_APPL_CONST) pncConfigPtr_pcs;
+   P2CONST(ComM_ChannelType, AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs;
 
     pncConfigPtr_pcs = &(COMM_GET_PNC_LIST[PncIndex]);
     numChannels = pncConfigPtr_pcs->NumChannels;
@@ -128,7 +128,7 @@ FUNC(void,COMM_CODE) ComM_EIRA_CallBack
    uint8 SigValue[8];
    uint16 ComSigId_u16;
    P2VAR(ComM_PncRamStructType, AUTOMATIC, COMM_APPL_DATA) pncRamPtr_ps;
-   P2CONST(ComM_PncConfigStruct_t,AUTOMATIC,COMM_APPL_CONST) pncConfigPtr_pcs;
+   P2CONST(ComM_PncConfigStruct_t, AUTOMATIC,COMM_APPL_CONST) pncConfigPtr_pcs;
    boolean EIRA_PncSigValue;
 
     SchM_Enter_ComM_EIRANoNest();
@@ -191,7 +191,7 @@ FUNC(void,COMM_CODE) ComM_ERA_CallBack
    uint16 ComSigId_u16;
    uint8 SigValue[8];
    P2VAR(ComM_PncRamStructType, AUTOMATIC, COMM_APPL_DATA) pncRamPtr_ps;
-   P2CONST(ComM_PncConfigStruct_t,AUTOMATIC,COMM_APPL_CONST) pncConfigPtr_pcs;
+   P2CONST(ComM_PncConfigStruct_t, AUTOMATIC,COMM_APPL_CONST) pncConfigPtr_pcs;
 
     SchM_Enter_ComM_ERANoNest();
 
@@ -253,7 +253,7 @@ FUNC(ComM_ModeType, COMM_CODE) ComM_LgetLeastBusSmMode(ComM_UserHandleType UserI
 
 {
 
-   VAR(ComM_ModeType,AUTOMATIC) leastModeAmongChannels_e;
+   VAR(ComM_ModeType, AUTOMATIC) leastModeAmongChannels_e;
    P2VAR(ComM_UserVarType, AUTOMATIC, COMM_APPL_DATA) userRamPtr_ps;
 
    userRamPtr_ps = &ComM_UserStruct[UserIndex];
@@ -287,7 +287,7 @@ FUNC(void, COMM_CODE) ComM_LTranslateInhibitionStatus
                                             )
 {
 
-   P2CONST(ComM_ChannelType,AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs;
+   P2CONST(ComM_ChannelType, AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs;
 
 #if(COMM_PNC_ENABLED != STD_OFF)
    uint8 numPnc_u8;
@@ -310,7 +310,7 @@ FUNC(void, COMM_CODE) ComM_LTranslateInhibitionStatus
         {
             uint8 pncId_u8;
             P2VAR(ComM_PncRamStructType, AUTOMATIC, COMM_APPL_DATA) pncRamPtr_ps;
-            P2CONST(ComM_PncConfigStruct_t,AUTOMATIC,COMM_APPL_CONST) pncConfigPtr_pcs;
+            P2CONST(ComM_PncConfigStruct_t, AUTOMATIC,COMM_APPL_CONST) pncConfigPtr_pcs;
 
             pncId_u8 = pncs_p[numPnc_u8];
             pncRamPtr_ps = &ComM_PncRamStruct[pncId_u8];
@@ -402,13 +402,13 @@ FUNC(void, COMM_CODE) ComM_LUpdateChannelModes(NetworkHandleType Channel
 
    uint8 numUsers_u8;
    uint8 userId_u8;
-   P2CONST(ComM_ChannelType,AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs;
+   P2CONST(ComM_ChannelType, AUTOMATIC,COMM_APPL_CONST) channelConfigPtr_pcs;
 
    P2VAR(ComM_UserVarType, AUTOMATIC, COMM_APPL_DATA) userRamPtr_ps;
    P2CONST(uint8,COMM_CONST,COMM_APPL_CONST) allUsers_p;
 
 #if(COMM_LIMIT_TO_NOCOM_ENABLED != STD_OFF)
-   P2CONST(ComM_UsersType,AUTOMATIC,COMM_APPL_CONST) userConfigPtr_pcs;
+   P2CONST(ComM_UsersType, AUTOMATIC,COMM_APPL_CONST) userConfigPtr_pcs;
 #endif
 
    channelConfigPtr_pcs = &(COMM_GET_CHANNEL_LIST[Channel]);
@@ -507,7 +507,7 @@ FUNC(void, COMM_CODE) ComM_LRteNotifyLowestComMode
 #include "ComM_Cfg_MemMap.hpp"
 
 FUNC(void, COMM_CODE) ComM_LSyncWakeUpIndication(void){
-   VAR(uint8,AUTOMATIC) loopCtr_u8;
+   VAR(uint8, AUTOMATIC) loopCtr_u8;
 
     SchM_Enter_ComM_ChannelNoNest();
 
@@ -609,7 +609,7 @@ FUNC(Std_ReturnType, COMM_CODE) ComM_LProcessLimitToNoCom
 #include "ComM_Cfg_MemMap.hpp"
 FUNC(void, COMM_CODE) ComM_Nm_TransmissionFailure
 (
-  VAR(NetworkHandleType,AUTOMATIC) Channel
+  VAR(NetworkHandleType, AUTOMATIC) Channel
 )
 {
     (void)(Channel);
@@ -621,7 +621,7 @@ FUNC(void, COMM_CODE) ComM_Nm_TransmissionFailure
 #include "ComM_Cfg_MemMap.hpp"
 FUNC(void, COMM_CODE) ComM_Nm_NetworkTimeoutException
 (
-  VAR(NetworkHandleType,AUTOMATIC) Channel
+  VAR(NetworkHandleType, AUTOMATIC) Channel
 )
 {
     (void)(Channel);

@@ -13,7 +13,7 @@
 #include "ComM_Cfg_MemMap.hpp"
 
 extern FUNC(void,COMM_CODE) ComM_Init(
-                                    P2CONST(Type_CfgSwcServiceComM_st,AUTOMATIC,COMM_APPL_CONST) config
+                                    P2CONST(Type_CfgSwcServiceComM_st, AUTOMATIC,COMM_APPL_CONST) config
                                     );
 
 extern FUNC(void,COMM_CODE) ComM_DeInit(void);

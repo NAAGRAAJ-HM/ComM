@@ -10,7 +10,7 @@
 #include "DemManagerX.hpp"
 #include "DemAppInterfaceX.hpp"
 #include "AdcX.hpp"
-#include "version.hpp"
+#include "CfgSwcServiceStartUp.hpp"
 
 extern void Debug_GetTgRxIrqCounter(
    uint8* ucIrqCnt,
